@@ -1,0 +1,81 @@
+<body>
+    
+    {{> navbar}}
+    <div class="container">
+        <div class="titulos">
+            <h1 id="titulo">Agende aqui</h1>
+            <p id="subtitulo">Preencha o formulário para marcar o banho e tosa do seu pet</p>
+        </div>
+        <form class="row g-2 label-title" action="{{#if agendamento}}/editar{{else}}/cadastrar{{/if}}" method="post">      
+            <input type="hidden" name="id" value="{{agendamento.id}}">
+
+            <div class="col-6">
+                <label for="nome" class="form-label">Nome do Pet</label>
+                <input value="{{agendamento.nome}}" type="text" class="form-control" name="nome" id="nome" placeholder="">
+            </div>
+            <div class="col-6">
+                <label for="tipo_pet" class="form-label">Tipo do Pet</label>
+                <select class="form-select" name="tipo_pet" id="tipo_pet">
+                    <option selected disabled value="">Escolha...</option>
+                    <option {{#if (eq agendamento.tipo_pet "Cachorro")}} selected {{/if}} value="Cachorro">Cachorro</option>
+                    <option {{#if (eq agendamento.tipo_pet "Gato")}} selected {{/if}} value="Gato">Gato</option>
+                    <option {{#if (eq agendamento.tipo_pet "Coelho")}} selected {{/if}} value="Coelho">Coelho</option>
+                    <option {{#if (eq agendamento.tipo_pet "Ave")}} selected {{/if}} value="Ave">Ave</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="raca" class="form-label">Raça</label>
+                <input value="{{agendamento.raca}}" type="input" class="form-control" id="raca" name="raca">
+            </div>
+            <div class="col-6">
+                <label for="porte" class="form-label">Porte</label>
+                <select class="form-select" name="porte" id="porte">
+                    <option selected disabled value="">Escolha...</option>
+                    <option {{#if (eq agendamento.porte "Pequeno")}} selected {{/if}} value="Pequeno">Pequeno</option>
+                    <option {{#if (eq agendamento.porte "Médio")}} selected {{/if}} value="Medio">Médio</option>
+                    <option {{#if (eq agendamento.porte "Grande")}} selected {{/if}} value="Grande">Grande</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="idade" class="form-label">Idade</label>
+                <input value="{{agendamento.idade}}" type="number" class="form-control" name="idade" id="idade">
+            </div>
+            <div class="col-md-6">
+                <label for="sexo" class="form-label">Sexo</label>
+                <select class="form-select" name="sexo" id="sexo">
+                    <option selected disabled value="">Escolha...</option>
+                    <option {{#if (eq agendamento.sexo "Macho")}} selected {{/if}} value="Macho">Macho</option>
+                    <option {{#if (eq agendamento.sexo "Fêmea")}} selected {{/if}} value="Femea">Fêmea</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="servico" class="form-label">Serviço</label>
+                <select class="form-select" name="servico" id="servico">
+                    <option selected disabled value="">Selecione um serviço</option>
+                    <option {{#if (eq agendamento.servico "Banho")}} selected {{/if}} value="Banho">Banho</option>
+                    <option {{#if (eq agendamento.servico "Banho + Tosa Higiênica")}} selected {{/if}} value="Banho + Tosa Higiênica">Banho + Tosa Higiênica</option>
+                    <option {{#if (eq agendamento.servico "Banho + Tosa Completa")}} selected {{/if}} value="Banho + Tosa Completa">Banho + Tosa Completa</option>
+                    <option {{#if (eq agendamento.servico "Hidratação de Pelo")}} selected {{/if}} value="Hidratação de Pelo">Hidratação de Pelo</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="data_tosa" class="form-label">Data do Serviço</label>
+                <input value="{{agendamento.data_tosa}}" type="date" class="form-control" id="data_tosa" name="data_tosa">
+            </div>
+            <div class="col-md-6">
+                <label for="hora_tosa" class="form-label">Horário</label>
+                <input value="{{agendamento.hora_tosa}}" type="time" class="form-control" id="hora_tosa" name="hora_tosa">
+            </div>
+            
+            <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-register" style="background-color: #A9CB6C; color: white">
+                     {{#if agendamento}}
+                        Salvar
+                    {{else}}
+                        Agendar
+                    {{/if}}
+                </button>
+            </div>
+        </form>
+    </div>
+</body>

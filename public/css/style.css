@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Joti';
+    src: url('../fonts/JotiOne-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Jost-Medium';
+    src: url('../fonts/Jost-Medium.ttf') format('truetype'); 
+    src: url('../fonts/Jost-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jost-Regular';
+    src: url('../fonts/Jost-Regular.ttf') format('truetype');
+}
+
+/*CSS da Home*/
+.main-title {
+    color: #6a8d36;
+    font-weight: bold;
+    font-family: 'Joti', sans-serif;
+    font-size: 50px;
+}
+
+.icon-card {
+    font-family: 'Jost-Regular';
+    text-align: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 5px;
+    width: 15%;
+}
+.icon-card img {
+    max-width: 50px;
+    margin-bottom: 5px;
+   
+}
+
+.btnhome {
+    background-color: #a4c639;
+    font-family: 'Jost-Medium';
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 30px;
+    width: 300px;
+}
+
+.img-dog{
+    align-items: right;
+    justify-content: right;
+}
+
+.subtitulos{
+    font-family: 'Jost-Medium';
+    font-weight: bold;
+}
+
+/*Fim - CSS Home*/
+
+/*Registrar*/
+.titulos{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#titulo{
+    color: #6a8d36;
+    font-size: 27px;
+    width: 100%;
+    font-family: 'Joti';
+}
+
+#subtitulo, .label-title{
+    color: #000000;
+    margin-bottom: 2%;
+    width: 100%;
+    font-family: 'Jost-Regular';
+}
+
+.btn-register {
+    font-family: 'Jost-Medium';
+    text-decoration: none;
+    padding: 1rem 5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 30px;
+    width: 300px;
+}
+
+.btn-register:hover{
+    background-color: #7EA808!important;
+}

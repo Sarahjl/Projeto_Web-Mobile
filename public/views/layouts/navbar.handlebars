@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-body-primary" style="background-color: #A9CB6C;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"> 
+            <img src="img/save-animals.png" alt="" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item item-logado">
+                    <a class="nav-link" href="/cadastrar" style="color: white;">Agendar</a>
+                </li>
+                <li class="nav-item item-logado">
+                    <a class="nav-link" href="/consultar" style="color: white;">Agendamentos</a>
+                </li>
+                <li class="nav-item item-deslogado">
+                    <a class="btn btn-light ms-3" href="/login" style="color: #A9CB6C;">Entrar</a>
+                </li>
+                <li class="nav-item item-logado">
+                    <a class="nav-link email" style="color: #fff;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    var localUser = sessionStorage.getItem('user');
+    user = JSON.parse(localUser);
+
+    if(user){
+        document.querySelectorAll(".item-logado").forEach(e=>{
+            e.style.display = "block"
+        })
+        document.querySelectorAll(".item-deslogado").forEach(e=>{
+            e.style.display = "none"
+        })
+        document.querySelector(".email").innerHTML = user.email
+    }else{
+         document.querySelectorAll(".item-logado").forEach(e=>{
+            e.style.display = "none"
+        })
+        document.querySelectorAll(".item-deslogado").forEach(e=>{
+            e.style.display = "block"
+        })
+    }
+
+    document.querySelector(".email").addEventListener('click', function () {
+        sessionStorage.removeItem('user');
+        window.location.href = '/login';
+    })
+</script>

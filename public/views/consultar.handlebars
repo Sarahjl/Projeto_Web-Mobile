@@ -1,0 +1,72 @@
+<body>
+    {{> navbar}}
+  <script>
+		function confirmDelete(delUrl) {
+  			if (confirm("Deseja apagar o registro?"))
+   				document.location = delUrl;
+		}
+	</script>
+
+  <div class="container">
+    {{#if mensagemSucesso}}
+      <div class="alert alert-success">
+          {{mensagemSucesso}}
+      </div>
+    {{/if}}
+ 
+    {{#if mensagemErro}}
+      <div class="alert alert-danger">
+          {{mensagemErro}}
+      </div>
+    {{/if}}
+
+    <div class="titulos">
+        <h1 id="titulo">Meus agendamentos</h1>
+        <p id="subtitulo">Consulte aqui todos os agendamentos que foram realizados.</p>
+    </div>
+
+    <div class="container" style="background-color: white;">
+        </br>
+        <div class="row">
+            <div class="table-responsive" >
+                <table class="table">
+                    <thead class="table-active" style="text-align: center;">
+                        <tr>
+                            <th scope="col">Nome do Pet</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Raça</th>
+                            <th scope="col">Porte</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Serviço</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Horário</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {{#each agendamentos}}
+                        <tr style="text-align: center;">
+                          <td scope="col">{{nome}}</td>
+                          <td scope="col">{{tipo_pet}}</td>
+                          <td scope="col">{{raca}}</td>
+                          <td scope="col">{{porte}}</td>
+                          <td scope="col">{{idade}}</td>
+                          <td scope="col">{{sexo}}</td>
+                          <td scope="col">{{servico}}</td>
+                          <td scope="col">{{data_tosa}}</td>
+                          <td scope="col">{{hora_tosa}}</td>
+                          <td>
+                            <a href="/editar/{{id}}"><img class="icon" src="./img/editar.png" alt="Editar Agendamento" height="25"/></a>
+                            <a style="cursor: pointer" onclick="javascript:confirmDelete('apagar/{{id}}')"><img class="icon" src="./img/excluir.png" alt="Éxcluir Agendamento" height="25"/></a>  
+                          </td>
+                        </tr>
+                      {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</body>

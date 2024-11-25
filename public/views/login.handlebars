@@ -1,0 +1,53 @@
+<body style="background-color: #D5EED0;">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="form-container border p-4 rounded" style="background-color: #f9f9f9; width: 100%; max-width: 400px;">
+            <form class="label-title">
+                <h3 class="text-center mb-4" id="titulo">Login</h3>
+                <div class="form-group mb-3">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com email">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleInputPassword1">Senha</label>
+                    <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn" style="background-color: #7EA808; color: white">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', async() => {
+            if (isLoggedUser()) {
+                window.location.href = '/'; // Redireciona se o usuário já estiver logado
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                
+                const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+
+                const token = await user.getIdToken();
+                sessionStorage.setItem('user', JSON.stringify({ uid: user.uid, email: user.email, token }));
+                
+                window.location.href = '/';
+            } catch (error) {
+                console.log(error)
+            }
+        });
+
+        function isLoggedUser() {
+            var localUser = sessionStorage.getItem('user');
+            return JSON.parse(localUser);
+        }
+    </script>
+</body>
