@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "440923151536",
+    "project_id": "projeto-web-11500",
+    "storage_bucket": "projeto-web-11500.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440923151536:android:4906e1d25b2c4d042eef75",
+        "android_client_info": {
+          "package_name": "com.example.cuidadopet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHAuniW_HqPhwNZ_FwCScLjSFrd1hn4VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440923151536:android:36a353476e2e827e2eef75",
+        "android_client_info": {
+          "package_name": "com.example.cuidadopet1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHAuniW_HqPhwNZ_FwCScLjSFrd1hn4VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440923151536:android:d8c279648466d4572eef75",
+        "android_client_info": {
+          "package_name": "com.example.projetoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHAuniW_HqPhwNZ_FwCScLjSFrd1hn4VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
